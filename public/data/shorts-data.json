@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "src": "https://images.pexels.com/photos/33189500/pexels-photo-33189500.jpeg",
+        "title": "Sunset Serenity",
+        "views": "12.4K"
+    },
+    {
+        "id": 2,
+        "src": "https://images.pexels.com/photos/31215331/pexels-photo-31215331.jpeg",
+        "title": "Urban Vibes",
+        "views": "8.9K"
+    },
+    {
+        "id": 3,
+        "src": "https://images.pexels.com/photos/1758144/pexels-photo-1758144.jpeg",
+        "title": "Mountain Majesty",
+        "views": "15.2K"
+    },
+    {
+        "id": 4,
+        "src": "https://images.pexels.com/photos/1642228/pexels-photo-1642228.jpeg",
+        "title": "Quiet Forest Trail",
+        "views": "6.7K"
+    },
+    {
+        "id": 5,
+        "src": "https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg",
+        "title": "Vintage Wheels",
+        "views": "9.3K"
+    },
+    {
+        "id": 6,
+        "src": "https://images.pexels.com/photos/3204296/pexels-photo-3204296.jpeg",
+        "title": "Coastal Calm",
+        "views": "11.8K"
+    }
+]

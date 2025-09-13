@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "src": "https://images.pexels.com/photos/18408665/pexels-photo-18408665.jpeg",
+        "title": "Sunset Over the Mountains",
+        "description": "A breathtaking view of a sunset behind the mountains, capturing the golden hues of the evening.",
+        "creator": "John Doe",
+        "views": "1,245",
+        "date": "2023-08-21",
+        "tags": ["sunset", "mountains", "nature", "golden hour", "landscape"]
+    },
+    {
+        "id": 2,
+        "src": "https://images.pexels.com/photos/29698583/pexels-photo-29698583.jpeg",
+        "title": "City Skyline at Night",
+        "description": "A vibrant city skyline illuminated at night, showcasing the modern architecture and bustling streets.",
+        "creator": "Jane Smith",
+        "views": "3,456",
+        "date": "2023-09-02",
+        "tags": ["city", "night", "skyline", "architecture", "urban","colorful"]
+    },
+    {
+        "id": 3,
+        "src": "https://images.pexels.com/photos/33670090/pexels-photo-33670090.jpeg",
+        "title": "Calm Lake Reflection",
+        "description": "The tranquil waters of a lake perfectly reflecting the blue sky and surrounding trees.",
+        "creator": "Emily Brown",
+        "views": "872",
+        "date": "2023-07-18",
+        "tags": ["lake", "reflection", "water", "tranquility", "nature"]
+    },
+    {
+        "id": 4,
+        "src": "https://images.pexels.com/photos/29498851/pexels-photo-29498851.jpeg",
+        "title": "Abstract Shapes",
+        "description": "A creative arrangement of colorful abstract shapes creating a visually striking composition.",
+        "creator": "Alex White",
+        "views": "543",
+        "date": "2023-09-10",
+        "tags": ["abstract", "shapes", "colorful", "art", "modern","nature"]
+    },
+    {
+        "id": 5,
+        "src": "https://images.pexels.com/photos/33816285/pexels-photo-33816285.jpeg",
+        "title": "Mountain Hiking Trail",
+        "description": "A scenic hiking trail leading up a mountain, with lush greenery and clear skies.",
+        "creator": "David Lee",
+        "views": "1,567",
+        "date": "2023-06-15",
+        "tags": ["hiking", "mountain", "trail", "adventure", "nature","colorful"]
+    },
+    {
+        "id": 6,
+        "src": "https://images.pexels.com/photos/14681530/pexels-photo-14681530.jpeg",
+        "title": "Coastal Sunrise",
+        "description": "A stunning sunrise over the ocean, with soft pastel colors illuminating the sky and water.",
+        "creator": "Sophia Green",
+        "views": "2,890",
+        "date": "2023-08-05",
+        "tags": ["sunrise", "coast", "ocean", "pastel", "seascape","colorful","nature"]
+    }
+]
