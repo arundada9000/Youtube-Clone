@@ -1,5 +1,6 @@
 import React from "react";
-import App from "./App"; // layout component
+import App from "./App";
+import CreatePostLayout from "./Components/CreatePostLayout";
 const Home = React.lazy(() => import("./Components/Home"));
 const ShortsPage = React.lazy(() => import("./Components/ShortsPage"));
 const SubscriptionPage = React.lazy(() =>
@@ -7,7 +8,9 @@ const SubscriptionPage = React.lazy(() =>
 );
 const DownloadsPage = React.lazy(() => import("./Components/DownloadsPage"));
 const YouPage = React.lazy(() => import("./Components/YouPage"));
-const CreatePost = React.lazy(() => import("./Components/CreatePost"));
+const ScheduledPost = React.lazy(() => import("./Components/ScheduledPost"));
+const ArchivedPost = React.lazy(() => import("./Components/ArchivedPost"));
+const PublishedPost = React.lazy(() => import("./Components/PublishedPost"));
 
 const routes = [
   {
@@ -19,7 +22,15 @@ const routes = [
       { path: "subscriptions", element: <SubscriptionPage /> },
       { path: "downloads", element: <DownloadsPage /> },
       { path: "you", element: <YouPage /> },
-      { path: "create-post", element: <CreatePost /> },
+    ],
+  },
+  {
+    path: "create-post",
+    element: <CreatePostLayout />,
+    children: [
+      { path: "", element: <PublishedPost /> },
+      { path: "scheduled-post", element: <ScheduledPost /> },
+      { path: "archived-post", element: <ArchivedPost /> },
     ],
   },
 ];

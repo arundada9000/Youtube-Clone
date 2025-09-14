@@ -90,7 +90,7 @@ const Header = () => {
           <Notifications notificationOpen={notificationOpen} />
         </div>
       </button>
-      <div className=" ml-3 flex items-center justify-center p-2 cursor-pointer  bg-[rgb(255,255,255,0.15)] rounded-full hover:bg-gray-200/40">
+      <div className=" ml-3 flex items-center justify-center p-2 cursor-pointer rounded-full hover:bg-gray-200/40">
         <FaUserCircle
           onClick={handleProfileClick}
           style={{ fontSize: "25px", color: "white", cursor: "pointer" }}

@@ -6,7 +6,7 @@ import { BiPoll } from "react-icons/bi";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import { LuListVideo } from "react-icons/lu";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaRegEdit } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const CreatePost = () => {
   const inputRef = useRef(null);
@@ -135,28 +135,40 @@ const CreatePost = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center border-b-1 border-white mt-5 ">
+      <div className="flex items-center border-b-1 border-white mt-5 max-w-[900px]">
         <ul className="flex items-center gap-10 text-gray-300 font-semibold text-sm pl-10 pb-1">
-          <li className="cursor-pointer hover:border-b-5 border-white/60 h-7 ">
+          <NavLink
+            to="."
+            end
+            className={({ isActive }) =>
+              `cursor-pointer hover:border-b-5 border-white/40 h-7 ${
+                isActive ? "border-b-5 border-white" : ""
+              }`
+            }
+          >
             PUBLISHED
-          </li>
-          <li className="cursor-pointer hover:border-b-5 border-white/60 h-7 ">
+          </NavLink>
+          <NavLink
+            to="scheduled-post"
+            className={({ isActive }) =>
+              `cursor-pointer hover:border-b-5 border-white/40 h-7 ${
+                isActive ? "border-b-5 border-white" : ""
+              }`
+            }
+          >
             SCHEDULED
-          </li>
-          <li className="cursor-pointer hover:border-b-5 border-white/60 h-7 ">
+          </NavLink>
+          <NavLink
+            to="archived-post"
+            className={({ isActive }) =>
+              `cursor-pointer hover:border-b-5 border-white/40 h-7 ${
+                isActive ? "border-b-5 border-white" : ""
+              }`
+            }
+          >
             ARCHIVED
-          </li>
+          </NavLink>
         </ul>
-      </div>
-      <div className="w-full mt-5 items-center justify-center flex flex-col">
-        <div className="flex items-center justify-center p-5 rounded-full bg-[rgba(40,40,40,255)]">
-          <FaRegEdit style={{ fontSize: "40px" }} />
-        </div>
-        <p className="text-md">Publish post</p>
-        <p className="text-sm">
-          Posts appear here after you publish and will be visible to your
-          community
-        </p>
       </div>
     </div>
   );
