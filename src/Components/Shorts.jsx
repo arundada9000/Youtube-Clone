@@ -37,7 +37,7 @@ const Shorts = () => {
     setOpen(true);
   };
   return (
-    <div>
+    <div className="mt-13">
       <div className="flex gap-2 mb-1 mt-3 align-center p-3">
         <SiYoutubeshorts
           style={{ fontSize: "20px", color: "red", cursor: "pointer" }}

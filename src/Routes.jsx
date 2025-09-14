@@ -11,6 +11,7 @@ const YouPage = React.lazy(() => import("./Components/YouPage"));
 const ScheduledPost = React.lazy(() => import("./Components/ScheduledPost"));
 const ArchivedPost = React.lazy(() => import("./Components/ArchivedPost"));
 const PublishedPost = React.lazy(() => import("./Components/PublishedPost"));
+const PageNotFound = React.lazy(() => import("./Components/PageNotFound"));
 
 const routes = [
   {
@@ -32,6 +33,10 @@ const routes = [
       { path: "scheduled-post", element: <ScheduledPost /> },
       { path: "archived-post", element: <ArchivedPost /> },
     ],
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ];
 

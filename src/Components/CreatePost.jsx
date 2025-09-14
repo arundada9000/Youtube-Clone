@@ -7,8 +7,11 @@ import { IoMdCheckboxOutline } from "react-icons/io";
 import { LuListVideo } from "react-icons/lu";
 import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+import useTheme from "../hooks/useTheme";
 
 const CreatePost = () => {
+  const { theme, ToggleTheme } = useTheme();
+
   const inputRef = useRef(null);
   const [focused, setFocused] = useState(false);
 
@@ -24,7 +27,11 @@ const CreatePost = () => {
     }
   };
   return (
-    <div className={`flex flex-col mt-[50px] py-1 w-full pb-20`}>
+    <div
+      className={`flex flex-col mt-[50px] py-1 w-full pb-20
+    ${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}
+    `}
+    >
       <div className="flex flex-grow w-full p-3 gap-5">
         <div>
           <FaUserCircle style={{ fontSize: "130px" }} />
@@ -33,16 +40,26 @@ const CreatePost = () => {
           <h1 className="text-4xl font-bold">Arun Neupane</h1>
           <p className="text-sm ">
             <span className="font-bold">@arunneupane4066</span>{" "}
-            <span className="text-gray-400">• 1M Subscribers</span>
+            <span
+              className={`text-sm 
+              ${theme === "dark" ? "text-gray-400" : "text-gray-800"}
+              `}
+            >
+              • 1M Subscribers
+            </span>
           </p>
-          <p className="text-sm text-gray-400">
+          <p
+            className={`text-sm 
+            ${theme === "dark" ? "text-gray-400 " : "bg-white text-gray-800"}
+            `}
+          >
             Hello I am Arun Neupane from Nepal ....more
           </p>
           <div className="flex gap-2">
-            <button className="flex gap-1 bg-[rgba(40,40,40,255)] text-sm text-white rounded-3xl items-center p-2 px-3 cursor-pointer hover:bg-gray-200/40 font-semibold">
+            <button className="flex gap-1 bg-[rgba(40,40,40,255)] text-sm    rounded-3xl items-center p-2 px-3 cursor-pointer hover:bg-gray-200/40 font-semibold">
               Customize Channel
             </button>
-            <button className="flex gap-1 bg-[rgba(40,40,40,255)] text-sm text-white rounded-3xl items-center p-2 px-3 cursor-pointer hover:bg-gray-200/40 font-semibold">
+            <button className="flex gap-1 bg-[rgba(40,40,40,255)] text-sm    rounded-3xl items-center p-2 px-3 cursor-pointer hover:bg-gray-200/40 font-semibold">
               Manage Videos
             </button>
           </div>
@@ -84,7 +101,7 @@ const CreatePost = () => {
         <div className="flex  justify-between ">
           <div className="flex gap-3 p-3 items-center">
             <FaUserCircle style={{ fontSize: "30px" }} />
-            <p className="text-sm font-semibold text-white">Arun Neupane</p>
+            <p className="text-sm font-semibold   ">Arun Neupane</p>
           </div>
           <div className="flex gap-3 p-3 text-sm text-gray-300">
             <span>Visibility : </span>

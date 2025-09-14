@@ -5,14 +5,15 @@ import { FaUserCircle } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import { LiaDownloadSolid } from "react-icons/lia";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import useTheme from "../hooks/useTheme";
 
 const Sidebar = () => {
+  const { theme, ToggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const [newWidth, setNewWidth] = useState("60px");
 
   const toggleOpen = () => {
-    console.log(open);
     setOpen((prev) => {
       const newState = !prev;
       setNewWidth(newState ? "125px" : "60px");
@@ -23,7 +24,11 @@ const Sidebar = () => {
   return (
     <div
       className={`fixed overflow-hidden border-white border-r-0 p-2 transition-all duration-300
-        bg-[rgb(0,0,0,0.95)] z-100 min-h-screen
+         z-100 min-h-screen  ${
+           theme === "dark"
+             ? "bg-[rgb(0,0,0,0.95)] text-white"
+             : "bg-white/95 text-black"
+         }
         `}
       style={{ width: newWidth }}
     >
@@ -33,7 +38,7 @@ const Sidebar = () => {
             <RxHamburgerMenu
               style={{
                 fontSize: "22px",
-                color: "white",
+
                 cursor: "pointer",
               }}
             />
@@ -44,14 +49,13 @@ const Sidebar = () => {
             to="/"
             className={({ isActive }) =>
               `flex flex-col items-center justify-center cursor-pointer ${
-                isActive ? "text-red-300" : "text-white"
+                isActive ? "text-red-300" : ""
               }`
             }
           >
             <IoHomeOutline
               style={{
                 fontSize: "22px",
-                color: "white",
               }}
             />
             {open ? "Home" : ""}
@@ -62,14 +66,13 @@ const Sidebar = () => {
             to="/shorts"
             className={({ isActive }) =>
               `flex flex-col items-center justify-center cursor-pointer ${
-                isActive ? "text-red-300" : "text-white"
+                isActive ? "text-red-300" : ""
               }`
             }
           >
             <SiYoutubeshorts
               style={{
                 fontSize: "22px",
-                color: "white",
               }}
             />
             {open ? "Shorts" : ""}
@@ -80,14 +83,13 @@ const Sidebar = () => {
             to="/subscriptions"
             className={({ isActive }) =>
               `flex flex-col items-center justify-center cursor-pointer ${
-                isActive ? "text-red-300" : "text-white"
+                isActive ? "text-red-300" : ""
               }`
             }
           >
             <MdOutlineSubscriptions
               style={{
                 fontSize: "22px",
-                color: "white",
               }}
             />
             {open ? "Subscriptions" : ""}
@@ -98,14 +100,13 @@ const Sidebar = () => {
             to="/you"
             className={({ isActive }) =>
               `flex flex-col items-center justify-center cursor-pointer ${
-                isActive ? "text-red-300" : "text-white"
+                isActive ? "text-red-300" : ""
               }`
             }
           >
             <FaUserCircle
               style={{
                 fontSize: "22px",
-                color: "white",
               }}
             />
             {open ? "You" : ""}
@@ -116,14 +117,13 @@ const Sidebar = () => {
             to="/downloads"
             className={({ isActive }) =>
               `flex flex-col items-center justify-center cursor-pointer ${
-                isActive ? "text-red-300" : "text-white"
+                isActive ? "text-red-300" : ""
               }`
             }
           >
             <LiaDownloadSolid
               style={{
                 fontSize: "22px",
-                color: "white",
               }}
             />
             {open ? "Downloads" : ""}

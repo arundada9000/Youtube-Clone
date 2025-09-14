@@ -4,7 +4,11 @@ import { MdLiveTv } from "react-icons/md";
 import { IoCreateOutline } from "react-icons/io5";
 import UploadVideo from "./UploadVideo";
 import { NavLink } from "react-router";
+import useTheme from "../hooks/useTheme";
+
 const Create = ({ createOpen }) => {
+  const { theme, ToggleTheme } = useTheme();
+
   const [open, setOpen] = useState(false);
   const uploadVideoClick = () => {
     setOpen(!open);
@@ -14,7 +18,13 @@ const Create = ({ createOpen }) => {
     <div
       className={`${
         createOpen ? "flex" : "hidden"
-      } flex-col gap-4 absolute top-7 left-0 bg-[rgba(40,40,40,255)] transform -translate-x-2/3 p-4 rounded-2xl shadow-lg transition-all ease-in-out duration-300 min-w-42 z-20`}
+      } flex-col gap-4 absolute top-7 left-0  transform -translate-x-2/3 p-4 rounded-2xl shadow-lg transition-all ease-in-out duration-300 min-w-42 z-20
+      ${
+        theme === "dark"
+          ? "bg-[rgba(40,40,40,255)] text-white"
+          : "bg-white text-black"
+      }
+      `}
     >
       <UploadVideo open={open} setOpen={setOpen} />
 

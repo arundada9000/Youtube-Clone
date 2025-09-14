@@ -16,8 +16,10 @@ import { IoHelpCircleOutline } from "react-icons/io5";
 import { MdOutlineFeedback } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import InsideSetting from "./InsideSetting";
+import useTheme from "../hooks/useTheme";
 
 const ProfileMenu = ({ profileOpen }) => {
+  const { theme, toggleTheme } = useTheme();
   const [insideProfileMenu, setInsideProfileMenu] = useState(false);
   const handleProfileInsideClick = () => {
     setInsideProfileMenu((prev) => !prev);
@@ -25,8 +27,10 @@ const ProfileMenu = ({ profileOpen }) => {
 
   return (
     <div
-      className={`flex-col absolute right-12 top-0 min-w-70 overflow-y-auto max-h-screen scrollbar-none w-48 bg-[rgba(40,40,40,255)] rounded-xl shadow-lg z-10 ${
+      className={`flex-col absolute right-12 top-0 min-w-70 overflow-y-auto max-h-screen scrollbar-none w-48  rounded-xl shadow-lg z-10 ${
         profileOpen ? "flex" : "hidden"
+      } ${
+        theme === "dark" ? "bg-[rgba(40,40,40,255)]  text-white " : "bg-white text-black"
       }`}
     >
       <div className="flex items-center p-4 border-b-2 border-white w-full">
@@ -35,7 +39,7 @@ const ProfileMenu = ({ profileOpen }) => {
           style={{ fontSize: "50px", color: "white" }}
         />
         <div className="flex flex-col ml-2">
-          <p className="text-white font-bold">Arun Neupane</p>
+          <p className="   font-bold">Arun Neupane</p>
           <p className="text-gray-300 text-sm">
             <span className="text-gray-400">@arunneupane4066</span>
           </p>
@@ -47,11 +51,11 @@ const ProfileMenu = ({ profileOpen }) => {
 
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <FaGoogle style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Google Account</span>
+        <span className="   p-2 text-sm">Google Account</span>
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <MdOutlineSwitchAccount style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm flex justify-between w-full h-full items-center">
+        <span className="   p-2 text-sm flex justify-between w-full h-full items-center">
           <span>Switch Account</span>
           <span>
             <MdKeyboardArrowRight
@@ -66,27 +70,27 @@ const ProfileMenu = ({ profileOpen }) => {
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer border-b-1 border-white hover:bg-[rgba(255,255,255,0.25)]">
         <PiSignOutThin style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Sign Out</span>
+        <span className="   p-2 text-sm">Sign Out</span>
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <SiYoutubestudio style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Youtube Studio</span>
+        <span className="   p-2 text-sm">Youtube Studio</span>
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 border-white border-b-1 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <RiMoneyDollarCircleLine style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Purchase and Membership</span>
+        <span className="   p-2 text-sm">Purchase and Membership</span>
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <RiShieldUserLine style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Your data in YouTube</span>
+        <span className="   p-2 text-sm">Your data in YouTube</span>
       </div>
       <div>
         <div
-          onClick={handleProfileInsideClick}
+          onClick={toggleTheme}
           className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]"
         >
           <BsMoon style={{ fontSize: "20px" }} />
-          <span className="text-white p-2 text-sm flex justify-between w-full h-full items-center">
+          <span className="   p-2 text-sm flex justify-between w-full h-full items-center">
             <span>Appearance : Device Theme</span>
             <span>
               <MdKeyboardArrowRight
@@ -115,7 +119,7 @@ const ProfileMenu = ({ profileOpen }) => {
           onClick={handleProfileInsideClick}
         >
           <IoLanguageOutline style={{ fontSize: "20px" }} />
-          <span className="text-white p-2 text-sm flex justify-between w-full h-full items-center">
+          <span className="   p-2 text-sm flex justify-between w-full h-full items-center">
             <span>Language</span>
             <span>
               <MdKeyboardArrowRight
@@ -243,7 +247,7 @@ const ProfileMenu = ({ profileOpen }) => {
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <RiUserForbidLine style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm flex justify-between w-full h-full items-center">
+        <span className="   p-2 text-sm flex justify-between w-full h-full items-center">
           <span>Restricted Mode</span>
           <span>
             <MdKeyboardArrowRight
@@ -258,7 +262,7 @@ const ProfileMenu = ({ profileOpen }) => {
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <CiGlobe style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm flex justify-between w-full h-full items-center">
+        <span className="   p-2 text-sm flex justify-between w-full h-full items-center">
           <span>Location</span>
           <span>
             <MdKeyboardArrowRight
@@ -273,19 +277,19 @@ const ProfileMenu = ({ profileOpen }) => {
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 border-white border-b-1 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <FaRegKeyboard style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Keyboard Shortcuts</span>
+        <span className="   p-2 text-sm">Keyboard Shortcuts</span>
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 border-white border-b-1 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <IoSettingsOutline style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Settings</span>
+        <span className="   p-2 text-sm">Settings</span>
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <IoHelpCircleOutline style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Help</span>
+        <span className="   p-2 text-sm">Help</span>
       </div>
       <div className="flex items-center gap-3 p-0 pl-4 w-full cursor-pointer hover:bg-[rgba(255,255,255,0.25)]">
         <MdOutlineFeedback style={{ fontSize: "20px" }} />
-        <span className="text-white p-2 text-sm">Send Feedback</span>
+        <span className="   p-2 text-sm">Send Feedback</span>
       </div>
     </div>
   );

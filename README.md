@@ -1,6 +1,6 @@
 # YouTube Clone
 
-A YouTube clone built with **Reactjs** to learn tailwind, routing ,nested-routing and overall design sense. This project replicates core YouTube functionality skeleton loading, routing, props, components, tag filtering. Its not responsive so watch it in desktop .
+A YouTube clone built with **Reactjs** to learn tailwind, routing ,nested-routing, custom hook and overall design sense. This project replicates core YouTube functionality skeleton loading, routing, props, components, tag filtering, appearance switching. Its not responsive so watch it in desktop .
 
 Live Demo: [arunTube.vercel.app](https://aruntube.vercel.app)
 

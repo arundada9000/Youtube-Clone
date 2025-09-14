@@ -8,8 +8,10 @@ import Notifications from "./Notifications";
 import AudioSearch from "./AudioSearch";
 import Create from "./Create";
 import ProfileMenu from "./ProfileMenu";
+import useTheme from "../hooks/useTheme";
 
 const Header = () => {
+  const { theme, ToggleTheme } = useTheme();
   const [notificationOpen, setNotificationOpen] = useState(false);
   const handleNotificationClick = () => {
     setNotificationOpen(!notificationOpen);
@@ -31,7 +33,15 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed right-0 left-[70px] bg-[rgb(0,0,0,0.75)] top-0 flex justify-between items-center p-2 border-b-0 border-white z-20">
+    <div
+      className={`fixed right-0 left-[70px]  top-0 flex justify-between items-center p-2 border-b-0 border-white z-20
+     ${
+       theme === "dark"
+         ? "bg-[rgb(0,0,0,0.75)] text-white"
+         : "bg-white/75 text-black"
+     }
+    `}
+    >
       <div className="flex items-center gap-2 text-xl font-bold p-2 font-arial">
         <IoLogoYoutube
           style={{ fontSize: "30px", color: "red", cursor: "pointer" }}
@@ -42,13 +52,13 @@ const Header = () => {
         <input
           type="text"
           placeholder=""
-          className=" p-2 text-white w-136 h-full border-0 focus:outline-none"
+          className=" p-2 w-136 h-full border-0 focus:outline-none"
         />
         <CiSearch
           className="bg-[rgb(255,255,255,0.15)] p-1 rounded cursor-pointer h-full"
           style={{
             fontSize: "30px",
-            color: "white",
+
             cursor: "pointer",
             width: "40px",
             outline: "none",
@@ -60,7 +70,7 @@ const Header = () => {
       <button className="relative p-3 bg-[rgb(255,255,255,0.15)] rounded-full ml-3 hover:bg-gray-200/40">
         <FaMicrophone
           onClick={handleMicrophoneClick}
-          style={{ fontSize: "20px", color: "white", cursor: "pointer" }}
+          style={{ fontSize: "20px", cursor: "pointer" }}
         />
         <AudioSearch
           listening={listening}
@@ -84,7 +94,7 @@ const Header = () => {
       <button className="relative ml-3 flex items-center gap-1 p-2 cursor-pointer rounded-4xl hover:bg-gray-200/40">
         <IoIosNotificationsOutline
           onClick={handleNotificationClick}
-          style={{ fontSize: "25px", color: "white", cursor: "pointer" }}
+          style={{ fontSize: "25px", cursor: "pointer" }}
         />
         <div className="z-10 absolute top-[0px] right-[40px] bg-[rgb(255,255,255,0.11)]">
           <Notifications notificationOpen={notificationOpen} />
@@ -93,7 +103,7 @@ const Header = () => {
       <div className=" ml-3 flex items-center justify-center p-2 cursor-pointer rounded-full hover:bg-gray-200/40">
         <FaUserCircle
           onClick={handleProfileClick}
-          style={{ fontSize: "25px", color: "white", cursor: "pointer" }}
+          style={{ fontSize: "25px", cursor: "pointer" }}
         />
 
         <span className="relative ">
