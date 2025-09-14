@@ -158,11 +158,11 @@ const Tags = ({ selectedTag, setSelectedTag }) => {
         {tagOptions.map((tag) => (
           <div
             key={tag}
-            className={`text-md px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-600 whitespace-nowrap transition-all duration-150 ease-in ${
-              tag === selectedTag ? "bg-blue-400" : ""
-            }
+            className={`text-md px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-600 whitespace-nowrap transition-all duration-150 ease-in 
             ${
-              theme === "dark"
+              tag === selectedTag
+                ? "bg-blue-400 text-white"
+                : theme === "dark"
                 ? "bg-gray-800 text-white"
                 : "bg-white/80 text-black"
             }
